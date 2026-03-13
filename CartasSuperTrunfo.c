@@ -10,6 +10,9 @@ int main(){
     float area1;
     float pib1;
     int pontosTuristicos1;
+    float densidade1;
+    float pibPerCapita1;
+
 
     // == CARTA 2 ==
     char estado2;
@@ -19,6 +22,8 @@ int main(){
     float area2;
     float pib2;
     int pontosTuristicos2;
+    float densidade2;
+    float pibPerCapita2;
 
     //"== CADASTRO DA CARTA 1 ==\n";
     printf("== Cadastro da Carta 1 ==\n");
@@ -38,10 +43,10 @@ int main(){
     printf("Area (Km2):\n ");
     scanf("%f", &area1);
 
-    printf("PIB (em bilhoes):\n ");
+    printf("PIB (bilhoes de reais): \n");
     scanf("%f", &pib1);
 
-    printf("Numeros de Pontos Turisticos:\n ");
+    printf("Numero de pontos turisticos: \n");
     scanf("%d", &pontosTuristicos1);
 
     // == ENTRADA CARTA 2 ==
@@ -62,11 +67,18 @@ int main(){
     printf("Area (km2):\n ");
     scanf("%f", &area2);
 
-    printf("PIB (em bilhoes):\n ");
+    printf("PIB (bilhoes de reais):\n ");
     scanf("%f", &pib2);
 
     printf("Numeros de Pontos Turisticos:\n ");
     scanf("%d", &pontosTuristicos2);
+
+    // == Cálculos ==
+    densidade1 = (float)populacao1 / area1;
+    pibPerCapita1 = (pib1 * 1000000000.0) / populacao1;
+
+    densidade2 = (float)populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000.0) / populacao2;
 
     // == SAIDA DOS DADOS ==
     printf("\nCarta 1:\n");
@@ -77,6 +89,8 @@ int main(){
     printf("Area: %.2f Km2\n", area1);
     printf("PIB: %.2f bilhoes de reais\n", pib1);
     printf("Numeros de Pontos Turisticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estado2);
@@ -86,6 +100,8 @@ int main(){
     printf("Area: %.2f Km2\n", area2);
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     printf("Numeros de Pontos Turisticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
 return 0;
 } 
